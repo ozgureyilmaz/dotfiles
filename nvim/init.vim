@@ -86,7 +86,6 @@ set nofoldenable
 set smartcase
 set vb t_vb=
 set background=dark
-set mouse=a
 set updatetime=300
 set nolist
 set cmdheight=2
