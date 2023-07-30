@@ -1,5 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'puremourning/vimspector'
+
 " Sözdizimi vurgulama eklentileri
 Plug 'sheerun/vim-polyglot'
 
@@ -73,7 +75,25 @@ set expandtab
 set ai
 set number
 set hlsearch
+set incsearch
 set ruler
+set showmatch
+set ignorecase
+" Font ayarları
+set guifont=FiraCode\ Nerd\ Font\ 11
+set relativenumber
+set nofoldenable
+set smartcase
+set vb t_vb=
+set background=dark
+set mouse=a
+set updatetime=300
+set nolist
+set cmdheight=2
+set showcmd
+
+
+
 highlight Comment ctermfg=green
 
 " Rust için LSP ayarları
@@ -93,3 +113,4 @@ let g:copilot_filetypes = {
 \ 'help': v:true,
 \ }
 
+let g:vimspector_enable_mappings = 'HUMAN'

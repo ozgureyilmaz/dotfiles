@@ -23,6 +23,5 @@
     cyan = "#8ec07c"
     white = "#ebdbb2"
 
-
 [selection]
 save_to_clipboard = true
