@@ -1,5 +1,8 @@
 call plug#begin('~/.config/nvim/plugged')
 
+"zoxide shell eklenti 
+Plug 'nanotee/zoxide.vim'
+
 Plug 'puremourning/vimspector'
 
 " Sözdizimi vurgulama eklentileri

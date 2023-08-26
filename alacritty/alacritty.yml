@@ -1,3 +1,15 @@
+shell:
+  program: /bin/bash 
+
+dynamic_title: true
+dynamic_title_max_chars: 100
+
+prompt:
+  content: "{user}@{hostname} {cwd} {git_branch} | {parent.process}"
+
+window:
+  opacity: 0.7
+
 colors:
   primary:
     background: '0x282828'
@@ -20,4 +32,5 @@ colors:
     magenta: '0xd3869b'
     cyan: '0x8ec07c'
     white: '0xebdbb2'
+
 
