@@ -1,4 +1,12 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config)/nvim/plugged')
+
+" Tree-sitter-Rust eklentis)i
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+
+"vim-solidity
+Plug 'tomlion/vim-solidity'
 
 "zoxide shell eklenti 
 Plug 'nanotee/zoxide.vim'
