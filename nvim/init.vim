@@ -1,9 +1,12 @@
-call plug#begin('~/.config)/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
-" Tree-sitter-Rust eklentis)i
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
+" Rust için nvim-lspconfig ve rust-tools.nvim eklentileri
+Plug 'neovim/nvim-lspconfig'
+Plug 'simrat39/rust-tools.nvim'
+
+" Debugging için plenary.nvim ve nvim-dap eklentileri
+Plug 'nvim-lua/plenary.nvim'
+Plug 'mfussenegger/nvim-dap'
 
 "vim-solidity
 Plug 'tomlion/vim-solidity'
