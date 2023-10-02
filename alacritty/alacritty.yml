@@ -33,4 +33,5 @@ colors:
     cyan: '0x8ec07c'
     white: '0xebdbb2'
 
-
+key_bindings:
+  - { key: B, mods: Control|Shift, action: None }
