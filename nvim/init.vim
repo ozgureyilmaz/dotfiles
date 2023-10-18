@@ -1,4 +1,12 @@
+set shell=/bin/bash
+
+" =============================================================================
+# Plugins 
+" =============================================================================
 call plug#begin('~/.vim/plugged')
+
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'leoluz/nvim-dap-go' 
 
 " Rust için nvim-lspconfig ve rust-tools.nvim eklentileri
 Plug 'neovim/nvim-lspconfig'
@@ -82,6 +90,10 @@ Plug 'vim-scripts/renumber.vim'
 
 call plug#end()
 
+" =============================================================================
+# Editor settings
+" =============================================================================
+
 syntax on
 set tabstop=2
 set shiftwidth=2
@@ -96,7 +108,7 @@ set ignorecase
 " Font ayarları
 set guifont=FiraCode\ Nerd\ Font\ 11
 set relativenumber
-set nofoldenable
+wset nofoldenable
 set smartcase
 set vb t_vb=
 set background=dark
@@ -105,7 +117,9 @@ set nolist
 set cmdheight=2
 set showcmd
 
-
+" =============================================================================
+" Keyboard shortcuts
+" =============================================================================
 
 highlight Comment ctermfg=green
 
@@ -127,3 +141,11 @@ let g:copilot_filetypes = {
 \ }
 
 let g:vimspector_enable_mappings = 'HUMAN'
+
+let g:coc_install_timeout = 30000
+
+
+" =============================================================================
+" # Autocommands 
+==========================================================================
+" =============================================================================
