@@ -1,0 +1,53 @@
+# mod tuşu atama
+set $mod Mod4
+set $ALT Mod1
+
+#pencere hareketi
+floating_modifier $ALT
+
+# Pencereler arasında geçiş yapma kısayolları
+bindsym $mod+j focus right
+bindsym $mod+k focus left
+bindsym $mod+h focus parent
+bindsym $mod+l focus child
+bindsym $mod+Tab focus
+
+# alacritty açma
+bindsym $ALT+F1 exec alacritty
+
+# thunar açma
+bindsym $ALT+F2 exec thunar
+
+# firefox açma
+bindsym $ALT+F3 exec firefox
+
+# pencere kapatma
+bindsym $ALT+F4 kill
+
+# obisidian açma 
+bindsym $ALT+F5 exec obsidian
+
+# pencere yerleşimi yatay
+default_orientation horizontal
+workspace_layout tabbed
+
+# pencere renk ayarları 
+client.focused        #0F0F0F #7FB256 #F5F5FF
+client.focused_inactive    #0F0F0F #7FB256 #E5E5E5
+client.unfocused    #0F0F0F #5697B2 #E5E5E5
+client.urgent        #0F0F0F #BC9B54 #E5E5E5
+
+# başlangıç uygulamaları
+exec --no-startup-id firefox
+exec --no-startup-id alacritty
+
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
