@@ -1,7 +1,7 @@
 set shell=/bin/bash
 
 " =============================================================================
-# Plugins 
+" # Plugins 
 " =============================================================================
 call plug#begin('~/.vim/plugged')
 
@@ -91,7 +91,7 @@ Plug 'vim-scripts/renumber.vim'
 call plug#end()
 
 " =============================================================================
-# Editor settings
+" # Editor settings
 " =============================================================================
 
 syntax on
@@ -108,7 +108,6 @@ set ignorecase
 " Font ayarları
 set guifont=FiraCode\ Nerd\ Font\ 11
 set relativenumber
-wset nofoldenable
 set smartcase
 set vb t_vb=
 set background=dark
@@ -118,7 +117,7 @@ set cmdheight=2
 set showcmd
 
 " =============================================================================
-" Keyboard shortcuts
+" # Keyboard shortcuts
 " =============================================================================
 
 highlight Comment ctermfg=green
@@ -147,5 +146,4 @@ let g:coc_install_timeout = 30000
 
 " =============================================================================
 " # Autocommands 
-==========================================================================
 " =============================================================================
