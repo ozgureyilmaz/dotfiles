@@ -7,85 +7,33 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'leoluz/nvim-dap-go' 
-
-" Rust için nvim-lspconfig ve rust-tools.nvim eklentileri
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/rust-tools.nvim'
-
-" Debugging için plenary.nvim ve nvim-dap eklentileri
 Plug 'nvim-lua/plenary.nvim'
 Plug 'mfussenegger/nvim-dap'
-
-"vim-solidity
 Plug 'tomlion/vim-solidity'
-
-"zoxide shell eklenti 
-Plug 'nanotee/zoxide.vim'
-
 Plug 'puremourning/vimspector'
-
-" Sözdizimi vurgulama eklentileri
 Plug 'sheerun/vim-polyglot'
-
-" Otomatik düzeltme eklentileri
 Plug 'Shougo/denite.nvim'
-
-" Otomatik girintileme eklentileri
-Plug 'jiangmiao/auto-pairs'
-
-" Use release branch (recommended)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Or build from source code by using yarn: https://yarnpkg.com
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-
 Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
-" 'bash install.sh 1' to get the bleeding edge or if you have trouble with the precompiled binary,
-"  but you'll compile sniprun at every update & will need the rust toolchain
-
 Plug 'nvim-lualine/lualine.nvim'
-" If you want to have icons in your statusline choose one of these
 Plug 'nvim-tree/nvim-web-devicons'
-
-" Github copilot eklenti
 Plug 'github/copilot.vim'
-
-" Rust için eklenti
 Plug 'rust-lang/rust.vim'
-
-" Genel kodlama için eklentiler
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-default branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
-
 Plug 'vim-scripts/renumber.vim'
 
 call plug#end()
@@ -105,7 +53,6 @@ set incsearch
 set ruler
 set showmatch
 set ignorecase
-" Font ayarları
 set guifont=FiraCode\ Nerd\ Font\ 11
 set relativenumber
 set smartcase
@@ -115,6 +62,10 @@ set updatetime=300
 set nolist
 set cmdheight=2
 set showcmd
+set completeopt=menuone,longest,preview
+set wildignore+=*.o,*.obj,.git,*.pyc
+
+
 
 " =============================================================================
 " # Keyboard shortcuts
@@ -122,8 +73,11 @@ set showcmd
 
 highlight Comment ctermfg=green
 
-" Rust için LSP ayarları
+" Rust LSP settings
 au FileType rust nnoremap <buffer> <F2> :CocCommand rust-analyzer.runSingle<CR>
+
+" python3 desteği
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Autocompletion için LSP istemcisi
 let g:coc_global_extensions = ['coc-rust-analyzer']
@@ -134,6 +88,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+" Coc.nvim python3 configuration
+autocmd BufEnter * silent! :call CocAction('highlight')
 
 let g:copilot_filetypes = {
 \ 'help': v:true,
@@ -147,3 +103,9 @@ let g:coc_install_timeout = 30000
 " =============================================================================
 " # Autocommands 
 " =============================================================================
+
+autocmd BufRead python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd BufRead python set colorcolumn=80
+
+autocmd FileType markdown set spell, nonumber
+
