@@ -107,5 +107,4 @@ let g:coc_install_timeout = 30000
 autocmd BufRead python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd BufRead python set colorcolumn=80
 
-autocmd FileType markdown set spell, nonumber
 
