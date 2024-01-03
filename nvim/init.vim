@@ -36,6 +36,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug '~/my-prototype-plugin'
 Plug 'vim-scripts/renumber.vim'
 
+Plug 'itchyny/lightline.vim'
+Plug 'sainnhe/artify.vim'
+Plug 'albertomontesg/lightline-asyncrun' " Integration of https://github.com/skywind3000/asyncrun.vim
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Git status is provided by coc-git
+Plug 'rmolin88/pomodoro.vim'
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 " =============================================================================
