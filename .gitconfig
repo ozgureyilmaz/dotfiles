@@ -1,0 +1,19 @@
+[core]
+	editor = nvim
+	pager = diffr --colors refine-added:none:background:0x15,0x99,0x15:bold --colors added:none:background:0x25,0x55,0x25 --colors refine-removed:none:background:0x99,0x15,0x15:bold --colors removed:none:background:0x55,0x33,0x33 | less -R
+
+[user]
+	email = 0x79de@gmail.com
+	name = 0x79de
+
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[help]
+	autocorrect = 1

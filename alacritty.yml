@@ -1,15 +1,14 @@
 shell:
   program: /bin/bash 
 
+window:
+  opacity: 0.6
+
 dynamic_title: true
 dynamic_title_max_chars: 100
 
 prompt:
   content: "{user}@{hostname} {cwd} {git_branch} | {parent.process}"
-
-window:
-  opacity: 1
-
 
 key_bindings:
   - { key: B, mods: Control|Shift, action: None }
