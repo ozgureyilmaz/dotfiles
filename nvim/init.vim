@@ -1,5 +1,3 @@
-set shell=/bin/bash
-
 " Plug
 
 call plug#begin()
@@ -13,14 +11,13 @@ Plug 'rust-lang/rust.vim'
 
 " Debugger and Debugging Tools
 Plug 'rcarriga/nvim-dap-ui'
-Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-dap'
 Plug 'puremourning/vimspector'
+Plug 'neovim/nvim-lspconfig'
 
 " General Language Support
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.vim'
 
 " Markdown Support and Live Preview
 Plug 'shime/vim-livedown'
@@ -34,9 +31,6 @@ Plug 'tpope/vim-obsession'
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-scripts/renumber.vim'
 Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
-
-
-
 
 call plug#end()
 
@@ -73,8 +67,6 @@ set incsearch
 set ruler
 set showmatch
 set ignorecase
-set guifont=FiraCode\ Nerd\ Font\ 11
-set mouse=a
 set smartcase
 set vb t_vb=
 set background=dark
@@ -89,7 +81,18 @@ filetype plugin indent on
 
 " Autocommands 
 
-autocmd FileType rust nnoremap <buffer> <F2> :CocCommand rust-analyzer.runSingle<CR>
-autocmd BufEnter * silent! :call CocAction('highlight')
-autocmd BufRead python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd BufRead python set colorcolumn=80
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 smartindent autoindent foldmethod=indent foldlevel=99 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd BufNewFile,BufRead *.md set filetype=markdown ts=4 sw=4 expandtab smarttab
+
+" Coc Settings
+
+
+
+nnoremap  K :call ShowDocumentation()
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
