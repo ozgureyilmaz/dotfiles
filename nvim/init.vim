@@ -18,6 +18,8 @@ Plug 'neovim/nvim-lspconfig'
 " General Language Support
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
+
 
 " Markdown Support and Live Preview
 Plug 'shime/vim-livedown'
@@ -31,6 +33,7 @@ Plug 'tpope/vim-obsession'
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-scripts/renumber.vim'
 Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
+Plug 'iden3/vim-circom-syntax'
 
 call plug#end()
 
@@ -46,7 +49,6 @@ let g:copilot_filetypes = {
 let g:livedown_port = 8080
 let g:coc_install_timeout = 30000
 let g:vimspector_enable_mappings = 'HUMAN'
-
 
 
 " Editor settings
@@ -83,8 +85,6 @@ filetype plugin indent on
 
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 smartindent autoindent foldmethod=indent foldlevel=99 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 autocmd BufNewFile,BufRead *.md set filetype=markdown ts=4 sw=4 expandtab smarttab
-
-" Coc Settings
 
 
 
