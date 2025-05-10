@@ -1,3 +1,4 @@
-EDITOR="nvim"
-DEV_WORKSPACE=~/dev
+export CLICOLOR=1
+export EDITOR="nvim"
+export DEV_WORKSPACE=~/dev
 PATH=$HOME/.bin:$PATH
