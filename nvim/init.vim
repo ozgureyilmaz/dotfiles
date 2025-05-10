@@ -1,39 +1,32 @@
-" Plug
-
 call plug#begin()
 
-" Rust
 Plug 'simrat39/rust-tools.nvim'
 Plug 'rust-lang/rust.vim'
 
-" Solidity
  Plug 'tomlion/vim-solidity'
+ Plug 'vyperlang/vim-vyper'
 
-" Debugger and Debugging Tools
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'mfussenegger/nvim-dap'
-Plug 'puremourning/vimspector'
 Plug 'neovim/nvim-lspconfig'
 
-" General Language Support
-Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
 
+Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Markdown Support and Live Preview
+
 Plug 'shime/vim-livedown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
-" Vim Session Management 
 Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-obsession' 
 
-" Other
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-scripts/renumber.vim'
 Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'}
 Plug 'iden3/vim-circom-syntax'
+
 
 call plug#end()
 
@@ -50,6 +43,7 @@ let g:livedown_port = 8080
 let g:coc_install_timeout = 30000
 let g:vimspector_enable_mappings = 'HUMAN'
 
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Editor settings
 
@@ -96,3 +90,9 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
+
+
+nnoremap <silent> <leader>cc <cmd>CopilotChat<CR>
+vnoremap <silent> <leader>cc <cmd>CopilotChat<CR>
+
+let g:copilot_no_tab_map = 1 " Use 1 for true in Vimscript

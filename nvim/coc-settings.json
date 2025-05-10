@@ -6,14 +6,20 @@
     "rust-analyzer.reloadWorkspace": true,
     "rust-analyzer.updates.channel": "stable",
     "rust-analyzer.diagnostics.disabled": [
-		        "macro-error"
+		    "macro-error"
 	  ],
-    "inlayHint.enable": false,
+    "rust-analyzer.cargo.cfgs": [
+        "feature1",
+        "feature2"
+    ],
+
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.mypyEnabled": false,
     "python.linting.enabled": true,
-
+    
+    "coc.preferences.acceptSuggestionOnCommitCharacter": true,
+    "coc.preferences.snippetSuggestions": "top"
 }
 
